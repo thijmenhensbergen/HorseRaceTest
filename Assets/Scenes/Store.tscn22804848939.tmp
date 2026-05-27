@@ -1,0 +1,167 @@
+[gd_scene load_steps=9 format=3 uid="uid://btrdlgcsdp4ew"]
+
+[ext_resource type="Script" uid="uid://xol8w05fjnsy" path="res://source/GDScript/store.gd" id="1_c6jng"]
+[ext_resource type="Texture2D" uid="uid://b3yndhneafvbs" path="res://Assets/img/gtc785pqjsg91.jpg" id="1_rh2cj"]
+[ext_resource type="Texture2D" uid="uid://c0qmkja4gw4op" path="res://Assets/img/Grass_Block_(graphics_fast)_JE3.png" id="2_c6jng"]
+[ext_resource type="PackedScene" uid="uid://7ue1ybd1nym5" path="res://Assets/Scenes/TooExpensive.tscn" id="2_ji5lm"]
+[ext_resource type="Texture2D" uid="uid://dln32s1pynemo" path="res://Assets/img/pngtree-hay-color-image-isolated-on-picture-image_13265084.png" id="3_c4tuv"]
+[ext_resource type="Texture2D" uid="uid://c5e1ibtoh4d54" path="res://Assets/img/New_Apple.png" id="4_ji5lm"]
+[ext_resource type="Texture2D" uid="uid://dbsay6x2n72hn" path="res://Assets/img/Carrot_JE3_BE2.webp" id="5_lcyg4"]
+[ext_resource type="Script" uid="uid://kp766dj1h4in" path="res://source/GDScript/SceneChanger.gd" id="7_c4tuv"]
+
+[node name="Store" type="Control" node_paths=PackedStringArray("Title", "Desc")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c6jng")
+Title = NodePath("Title")
+Desc = NodePath("Desc")
+Particle = ExtResource("2_ji5lm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.9990001
+anchor_bottom = 1.0
+offset_right = 0.15185547
+texture = ExtResource("1_rh2cj")
+expand_mode = 1
+flip_h = true
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.34
+anchor_top = 0.51900005
+anchor_right = 0.77300006
+anchor_bottom = 0.62200004
+offset_left = -1.6799927
+offset_top = -0.31204224
+offset_right = -0.49609375
+offset_bottom = -0.056030273
+theme_override_font_sizes/font_size = 48
+text = "GOLD GRASS"
+
+[node name="Desc" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35200003
+anchor_top = 0.67
+anchor_right = 0.79800004
+anchor_bottom = 0.901
+offset_left = -3.5040283
+offset_top = -0.16000366
+offset_right = -0.2960205
+offset_bottom = 0.15197754
+theme_override_font_sizes/font_size = 24
+text = "Grass foraged from the mountainous plains of Shindong China"
+autowrap_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.51900005
+anchor_right = 0.328
+anchor_bottom = 0.989
+offset_left = 3.0
+offset_top = -0.31204224
+offset_right = 0.14398193
+offset_bottom = 2.1279907
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Grass
+Cost: 10"
+icon = ExtResource("2_c6jng")
+alignment = 0
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Hay
+Cost: 100"
+icon = ExtResource("3_c4tuv")
+alignment = 0
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Apple
+Cost: 1000"
+icon = ExtResource("4_ji5lm")
+alignment = 0
+
+[node name="Button4" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Carrot
+Cost: 10000"
+icon = ExtResource("5_lcyg4")
+alignment = 0
+
+[node name="Button5" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0.92984587, 0.9298463, 0, 1)
+text = "Gold Grass
+Cost: 100000"
+icon = ExtResource("2_c6jng")
+alignment = 0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.859
+anchor_top = 0.559
+anchor_right = 0.99200004
+anchor_bottom = 0.94100004
+offset_left = -0.5680542
+offset_top = -0.23199463
+offset_right = -16.784058
+offset_bottom = 0.23199463
+
+[node name="Button" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+text = "BUY 1"
+
+[node name="Button2" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+text = "BUY 10 "
+
+[node name="Button3" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+text = "BUY 100"
+
+[node name="Button4" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+text = "BUY MAX"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.074
+anchor_bottom = 0.054
+offset_right = -0.2480011
+offset_bottom = 0.00799942
+text = "BACK"
+script = ExtResource("7_c4tuv")
+url = "res://Assets/Scenes/MainPage.tscn"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.86600006
+anchor_right = 0.9990001
+anchor_bottom = 0.082
+offset_left = 0.36791992
+offset_right = 0.15185547
+offset_bottom = -0.13600159
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="SelectGrass"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="SelectHay"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="SelectApple"]
+[connection signal="pressed" from="VBoxContainer/Button4" to="." method="SelectCarrot"]
+[connection signal="pressed" from="VBoxContainer/Button5" to="." method="SelectGoldGrass"]
+[connection signal="pressed" from="VBoxContainer2/Button" to="." method="Add1"]
+[connection signal="pressed" from="VBoxContainer2/Button2" to="." method="add10"]
+[connection signal="pressed" from="VBoxContainer2/Button3" to="." method="add100"]
+[connection signal="pressed" from="VBoxContainer2/Button4" to="." method="addMax"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c65vxirtk8iao"
+path="res://.godot/imported/Cowboy Show.mp3-17fea00d75c08c406b2d3e1f4d45ccbb.mp3str"
+
+[deps]
+
+source_file="res://Assets/sfx/Cowboy Show.mp3"
+dest_files=["res://.godot/imported/Cowboy Show.mp3-17fea00d75c08c406b2d3e1f4d45ccbb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

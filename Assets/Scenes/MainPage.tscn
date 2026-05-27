@@ -1,0 +1,240 @@
+[gd_scene load_steps=16 format=3 uid="uid://b5dbvpbclmy0d"]
+
+[ext_resource type="Script" uid="uid://bpr7mb6s22r3n" path="res://source/GDScript/PHPGetter.gd" id="1_qeqjs"]
+[ext_resource type="Texture2D" uid="uid://cgwvcurd6vtyx" path="res://Assets/img/farm.jpg" id="2_xnse6"]
+[ext_resource type="Texture2D" uid="uid://bbw3kgd02qyvx" path="res://Assets/img/horse_white.png" id="3_87c3k"]
+[ext_resource type="Script" uid="uid://c2i2od5rq2ie6" path="res://source/GDScript/Feeder.gd" id="4_87c3k"]
+[ext_resource type="Theme" uid="uid://dsvincvcojj4" path="res://Assets/Themes/Button.tres" id="4_u4cbr"]
+[ext_resource type="Texture2D" uid="uid://c0qmkja4gw4op" path="res://Assets/img/Grass_Block_(graphics_fast)_JE3.png" id="5_76kpu"]
+[ext_resource type="Texture2D" uid="uid://dln32s1pynemo" path="res://Assets/img/pngtree-hay-color-image-isolated-on-picture-image_13265084.png" id="7_soeps"]
+[ext_resource type="Texture2D" uid="uid://c5e1ibtoh4d54" path="res://Assets/img/New_Apple.png" id="8_dg56q"]
+[ext_resource type="Texture2D" uid="uid://dbsay6x2n72hn" path="res://Assets/img/Carrot_JE3_BE2.webp" id="9_lelnn"]
+[ext_resource type="Script" uid="uid://kp766dj1h4in" path="res://source/GDScript/SceneChanger.gd" id="10_4nl1s"]
+[ext_resource type="AudioStream" uid="uid://c65vxirtk8iao" path="res://Assets/sfx/Cowboy Show.mp3" id="11_4nl1s"]
+
+[sub_resource type="Theme" id="Theme_xnse6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4nl1s"]
+bg_color = Color(0.7940901, 0.45747983, 0.77573997, 1)
+corner_radius_top_left = 50
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_afmds"]
+bg_color = Color(0.7940901, 0.45747983, 0.77573997, 1)
+corner_radius_top_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_712hv"]
+bg_color = Color(0.7940901, 0.45747983, 0.77573997, 1)
+corner_radius_top_left = 50
+shadow_size = 3
+
+[node name="CreationPage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -206.0
+offset_top = -32.0
+offset_right = 242.0
+offset_bottom = 264.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xnse6")
+
+[node name="PHPmanager" type="Node" parent="." node_paths=PackedStringArray("HorseName", "HorseLVL", "HorseXP", "HorseSpeed", "HorseIQ", "HorseTexture", "GrassButton", "HayButton", "AppleButton", "CarrotButton", "GoldGrassButton")]
+script = ExtResource("1_qeqjs")
+HorseName = NodePath("../Name")
+HorseLVL = NodePath("../ColorRect/HBoxContainer/Label2")
+HorseXP = NodePath("../ColorRect/HBoxContainer/Label3")
+HorseSpeed = NodePath("../ColorRect/HBoxContainer/Label4")
+HorseIQ = NodePath("../ColorRect/HBoxContainer/Label5")
+HorseTexture = NodePath("../TextureRect2")
+GrassButton = NodePath("../HBoxContainer/Button")
+HayButton = NodePath("../HBoxContainer/Button2")
+AppleButton = NodePath("../HBoxContainer/Button3")
+CarrotButton = NodePath("../HBoxContainer/Button4")
+GoldGrassButton = NodePath("../HBoxContainer/Button5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.298
+anchor_top = 0.74200004
+anchor_right = 0.707
+anchor_bottom = 0.804
+offset_left = -0.2960205
+offset_top = 0.18395996
+offset_right = -0.46398926
+offset_bottom = 0.0079956055
+theme = SubResource("Theme_xnse6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/HBoxContainer"]
+layout_mode = 2
+text = "LVL: "
+
+[node name="Label3" type="Label" parent="ColorRect/HBoxContainer"]
+layout_mode = 2
+text = "LVL: "
+
+[node name="Label4" type="Label" parent="ColorRect/HBoxContainer"]
+layout_mode = 2
+text = "LVL: "
+
+[node name="Label5" type="Label" parent="ColorRect/HBoxContainer"]
+layout_mode = 2
+text = "LVL: "
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.298
+anchor_top = 0.707
+anchor_right = 0.70600003
+anchor_bottom = 0.74200004
+offset_left = -0.2960205
+offset_top = -0.13601685
+offset_right = -0.31201172
+offset_bottom = 0.18395996
+horizontal_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.29700002
+anchor_top = 0.148
+anchor_right = 0.657
+anchor_bottom = 0.70500004
+offset_left = -0.14401245
+offset_top = 0.09600067
+offset_right = 0.13598633
+offset_bottom = 0.15997314
+texture = ExtResource("3_87c3k")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.938
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.17596436
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="HBoxContainer" node_paths=PackedStringArray("PHPManager")]
+layout_mode = 2
+theme = ExtResource("4_u4cbr")
+icon = ExtResource("5_76kpu")
+icon_alignment = 1
+script = ExtResource("4_87c3k")
+url = "http://localhost/feed.php?c=10&f=grass"
+PHPManager = NodePath("../../PHPmanager")
+
+[node name="Button2" type="Button" parent="HBoxContainer" node_paths=PackedStringArray("PHPManager")]
+layout_mode = 2
+theme = ExtResource("4_u4cbr")
+icon = ExtResource("7_soeps")
+icon_alignment = 1
+script = ExtResource("4_87c3k")
+url = "http://localhost/feed.php?c=50&f=hay"
+PHPManager = NodePath("../../PHPmanager")
+
+[node name="Button3" type="Button" parent="HBoxContainer" node_paths=PackedStringArray("PHPManager")]
+layout_mode = 2
+theme = ExtResource("4_u4cbr")
+icon = ExtResource("8_dg56q")
+icon_alignment = 1
+script = ExtResource("4_87c3k")
+url = "http://localhost/feed.php?c=250&f=apple"
+PHPManager = NodePath("../../PHPmanager")
+
+[node name="Button4" type="Button" parent="HBoxContainer" node_paths=PackedStringArray("PHPManager")]
+layout_mode = 2
+theme = ExtResource("4_u4cbr")
+icon = ExtResource("9_lelnn")
+icon_alignment = 1
+script = ExtResource("4_87c3k")
+url = "http://localhost/feed.php?c=1250&f=carrot"
+PHPManager = NodePath("../../PHPmanager")
+
+[node name="Button5" type="Button" parent="HBoxContainer" node_paths=PackedStringArray("PHPManager")]
+layout_mode = 2
+theme = ExtResource("4_u4cbr")
+theme_override_colors/icon_normal_color = Color(0.93882376, 0.76500404, 0, 1)
+icon = ExtResource("5_76kpu")
+icon_alignment = 1
+script = ExtResource("4_87c3k")
+url = "http://localhost/feed.php?c=5000&f=goldGrass"
+PHPManager = NodePath("../../PHPmanager")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.39800003
+anchor_top = 0.832
+anchor_right = 0.5
+anchor_bottom = 0.92
+offset_left = 0.5039673
+offset_top = -0.13598633
+offset_bottom = -0.16003418
+text = "STORE"
+script = ExtResource("10_4nl1s")
+url = "res://Assets/Scenes/Store.tscn"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.832
+anchor_right = 0.60300004
+anchor_bottom = 0.92
+offset_left = 1.0
+offset_top = -0.13598633
+offset_right = 0.3439331
+offset_bottom = -0.16003418
+text = "RACE"
+script = ExtResource("10_4nl1s")
+url = "res://Assets/Scenes/CupSelection.tscn"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_4nl1s")
+autoplay = true
+parameters/looping = true
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.89900005
+anchor_top = 0.90400004
+anchor_right = 1.0
+anchor_bottom = 0.998
+offset_left = 0.3519287
+offset_top = 0.20794678
+offset_bottom = 0.29595947
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_4nl1s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_afmds")
+theme_override_styles/hover = SubResource("StyleBoxFlat_712hv")
+text = "HELP"
+script = ExtResource("10_4nl1s")
+url = "res://Assets/Scenes/Tutorial.tscn"

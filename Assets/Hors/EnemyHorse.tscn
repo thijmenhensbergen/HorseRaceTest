@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8stthubrsan8"]
+
+[ext_resource type="Script" uid="uid://bchs8lux4ttov" path="res://source/GDScript/horse.gd" id="1_tw34v"]
+[ext_resource type="Texture2D" uid="uid://cgqefawxcydha" path="res://Assets/img/horse_brown.png" id="2_f73tg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7cufk"]
+size = Vector2(104, 104)
+
+[node name="Horse" type="CharacterBody2D" node_paths=PackedStringArray("Sprite")]
+collision_mask = 2
+script = ExtResource("1_tw34v")
+Sprite = NodePath("Sprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7cufk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_f73tg")

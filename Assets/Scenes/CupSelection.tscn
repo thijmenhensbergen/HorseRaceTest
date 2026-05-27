@@ -1,0 +1,192 @@
+[gd_scene load_steps=8 format=3 uid="uid://dop7osbpy4vh8"]
+
+[ext_resource type="Texture2D" uid="uid://c62ulv73mq0rq" path="res://Assets/img/download (1).jpg" id="1_t0nfg"]
+[ext_resource type="Texture2D" uid="uid://d372r2b0npnvs" path="res://Assets/img/pntnv12qsvg51.webp" id="1_wj35i"]
+[ext_resource type="Texture2D" uid="uid://cuqv1i78twmiq" path="res://Assets/img/Kingdom_Valley.webp" id="2_b7lgr"]
+[ext_resource type="Script" uid="uid://kp766dj1h4in" path="res://source/GDScript/SceneChanger.gd" id="3_4aglx"]
+[ext_resource type="Texture2D" uid="uid://c0sslravgi7oo" path="res://Assets/img/TV_World_location.png" id="3_rk10c"]
+[ext_resource type="Texture2D" uid="uid://bxhbkjk62anbp" path="res://Assets/img/download (2).jpg" id="4_wj35i"]
+[ext_resource type="Texture2D" uid="uid://n1g6mvjm18bq" path="res://Assets/img/Shadow.webp" id="6_ydlp2"]
+
+[node name="CupSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_wj35i")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.404
+anchor_right = 0.58900005
+anchor_bottom = 1.0
+offset_left = -0.40802002
+offset_right = -0.5280762
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+texture = ExtResource("1_t0nfg")
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+text = "Starter Cup"
+
+[node name="Label2" type="Label" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+text = "Cost: 0"
+
+[node name="Button" type="Button" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+flat = true
+script = ExtResource("3_4aglx")
+url = "res://Assets/Scenes/Cups/CupStarter.tscn"
+
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer"]
+modulate = Color(0.26293245, 0.26293245, 0.26293245, 1)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PanelContainer2"]
+layout_mode = 2
+texture = ExtResource("2_b7lgr")
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+text = "Kingdom Cup"
+
+[node name="Label2" type="Label" parent="VBoxContainer/PanelContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+text = "Cost: 100"
+
+[node name="Button" type="Button" parent="VBoxContainer/PanelContainer2"]
+layout_mode = 2
+flat = true
+
+[node name="PanelContainer3" type="PanelContainer" parent="VBoxContainer"]
+modulate = Color(0.35906908, 0.35906908, 0.35906908, 1)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PanelContainer3"]
+layout_mode = 2
+texture = ExtResource("3_rk10c")
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer3"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+text = "TV Cup"
+
+[node name="Label2" type="Label" parent="VBoxContainer/PanelContainer3"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+text = "Cost: 1100"
+
+[node name="Button" type="Button" parent="VBoxContainer/PanelContainer3"]
+layout_mode = 2
+flat = true
+
+[node name="PanelContainer4" type="PanelContainer" parent="VBoxContainer"]
+modulate = Color(0.3180198, 0.31801978, 0.31801975, 1)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PanelContainer4"]
+layout_mode = 2
+texture = ExtResource("6_ydlp2")
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer4"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+text = "Space Station Cup"
+
+[node name="Label2" type="Label" parent="VBoxContainer/PanelContainer4"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+text = "Cost: 12000"
+
+[node name="Button" type="Button" parent="VBoxContainer/PanelContainer4"]
+layout_mode = 2
+flat = true
+
+[node name="PanelContainer5" type="PanelContainer" parent="VBoxContainer"]
+modulate = Color(0.2592937, 0.2592937, 0.2592937, 1)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PanelContainer5"]
+layout_mode = 2
+texture = ExtResource("4_wj35i")
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer5"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+text = "End of the World Cup"
+
+[node name="Label2" type="Label" parent="VBoxContainer/PanelContainer5"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+text = "Cost: 99999"
+
+[node name="Button" type="Button" parent="VBoxContainer/PanelContainer5"]
+layout_mode = 2
+flat = true
+
+[node name="Label" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.17400001
+offset_right = 1.0
+offset_bottom = 0.24799347
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0][tornado radius=10.0 freq=1.0 connected=1]SELECT YOUR CUP[/tornado][/rainbow]"
+horizontal_alignment = 1
+vertical_alignment = 1

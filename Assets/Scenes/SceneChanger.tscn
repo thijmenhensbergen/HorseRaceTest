@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://c1yf2t30t75ey"]
+
+[node name="SceneChanger" type="Button"]

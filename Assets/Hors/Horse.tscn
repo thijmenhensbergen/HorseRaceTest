@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://cy5qdyl067xq0"]
+
+[ext_resource type="Script" uid="uid://bchs8lux4ttov" path="res://source/GDScript/horse.gd" id="1_5xu1n"]
+[ext_resource type="Shader" uid="uid://bvylhhla3oppo" path="res://Assets/Shaders/Horse.gdshader" id="2_7cufk"]
+[ext_resource type="Texture2D" uid="uid://cgqefawxcydha" path="res://Assets/img/horse_brown.png" id="2_agwh4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7cufk"]
+size = Vector2(104, 104)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1mevh"]
+shader = ExtResource("2_7cufk")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 6.0
+shader_parameter/outline_color = Color(0.3254902, 1, 0.22352941, 0.39215687)
+
+[node name="Horse" type="CharacterBody2D" node_paths=PackedStringArray("Sprite")]
+collision_mask = 2
+script = ExtResource("1_5xu1n")
+Sprite = NodePath("Sprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7cufk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_1mevh")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_agwh4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
